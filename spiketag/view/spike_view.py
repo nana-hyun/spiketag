@@ -12,7 +12,7 @@ from ..base.CLU import CLU
 from ._core import _get_array, _accumulate
 from ._core import _spkNo2maskNo_numba, _cache_out, _cache_in_vector, _cache_in_scalar, _representsInt, _get_box_index
 from collections import deque
-
+from PyQt5.QtCore import Qt
 
 class spike_view(View):
    

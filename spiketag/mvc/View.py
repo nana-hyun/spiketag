@@ -4,16 +4,22 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import Qt, QThread, QEventLoop
 from PyQt5.QtWidgets import QStatusBar, QMainWindow, QAction, QFileDialog, QWidget, QSplitter, QComboBox, QTextBrowser, QSlider, QPushButton, QTableWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QLabel, QGridLayout
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication
 
-
-class MainView(QMainWindow):
-
+class MainView(QMainWindow,QApplication):
     def __init__(self, prb, model=None):
         super(MainView, self).__init__()
         self.prb = prb
         if model is not None:
             self._model = model
         self.initUI()
+        
+    def closeEvent(self, event):
+        """
+        창이 닫힐 때 호출되는 이벤트 핸들러.
+        애플리케이션을 안전하게 종료합니다.
+        """
+        QApplication.quit()
 
 
     def initUI(self):

@@ -10,7 +10,9 @@ import copy
 import torch
 from torch import nn
 import torch.nn.functional as F
+import math
 
+torch.pi = math.pi
 def gaussian_inhibition_field(coord, size_x=32, size_y=32):
     '''
     Genearte a gassian inhibition field with center at coord and size of size_x by size_y

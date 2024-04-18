@@ -166,7 +166,7 @@ class scatter_3d_view(scene.SceneCanvas):
         if self.dimension is None:
             self.dimension = [0,1,2]
         self.scatter.set_data(self.fet[:, self.dimension], symbol='o', edge_width=0.0, 
-                              size=self._size, edge_color=self.color, face_color=self.color)
+                              size=self._size.reshape(-1,1), edge_color=self.color, face_color=self.color)
 
         self.dimension_text.text = str(self.dimension) 
         self.dimension_text.pos  = np.array([35,10])
