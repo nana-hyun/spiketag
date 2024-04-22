@@ -272,7 +272,7 @@ class probe(BaseProbe):
             self._n_group = int(self._n_ch / self._group_len)
         else:
             self._n_group = grp_No
-        self.sorting_status = np.zeros((self._n_group,)).astype(np.int)
+        self.sorting_status = np.zeros((self._n_group,)).astype(int)
 
         # init with a already existing probe file
         if prbfile is not None:
