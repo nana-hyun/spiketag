@@ -139,6 +139,7 @@ class bload(object):
         bin.load('filename','int16')
         bin.load('filename','float32')
         '''
+        self.file_name = file_name
         self.mm   = memory_map(file_name)
         self.npmm = np.memmap(file_name, dtype=dtype, mode='readwrite')
         self.dtype = dtype
@@ -159,7 +160,7 @@ class bload(object):
         # self.t = np.linspace(0,self._npts*dt,self._npts,endpoint='false')
 
     def __repr__(self):
-        return self.info0 + self.info1 + self.info2 + self.info3
+        return self.file_name
 
 
     def asarray(self, binpoint=13):

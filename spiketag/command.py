@@ -171,7 +171,7 @@ def report(binaryfile, probefile, nbits=32):
         plt.style.use('dark_background')
 
         fig, ax = plt.subplots(1,2, figsize=(25,15), gridspec_kw = {'width_ratios':[3, 1]})
-        sns.scatterplot(t, prb.ch_idx[ch], hue=prb.ch_idx[ch], palette=plt.cm.hsv, s=18, marker='|',
+        sns.scatterplot(x=t, y=prb.ch_idx[ch], hue=prb.ch_idx[ch], palette=plt.cm.hsv, s=18, marker='|',
                         legend=False, ax=ax[0])
         ax[0].set_facecolor((.1, .1, .1, .0))
         ax[0].set_ylim(ax[0].get_ylim()[::-1])

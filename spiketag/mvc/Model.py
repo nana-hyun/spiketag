@@ -161,7 +161,7 @@ class MainModel(object):
         #                           speed_cutoff=speed_cutoff,
         #                           time_cutoff=time_cutoff)
         self.spk = SPK()
-        self.spk.load_spkwav('./spk_wav.bin')
+        self.spk.load_spkwav(self.spk_filename.replace('spk.bin', 'spk_wav.bin'))
         self.mua.spkdict = {} #self.spk.spk_dict
         self.mua.spk_times = {} #self.spk.spk_time_dict
         for g in self.probe.grp_dict.keys():
