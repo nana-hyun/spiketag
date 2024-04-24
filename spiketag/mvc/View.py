@@ -16,8 +16,8 @@ class MainView(QMainWindow,QApplication):
         
     def closeEvent(self, event):
         """
-        창이 닫힐 때 호출되는 이벤트 핸들러.
-        애플리케이션을 안전하게 종료합니다.
+        Event handler called when the Window closes.
+        Shut down the Application safely.
         """
         QApplication.quit()
 
